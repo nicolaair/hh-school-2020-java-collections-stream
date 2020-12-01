@@ -4,9 +4,8 @@ import common.Person;
 import common.PersonService;
 import common.Task;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /*
@@ -17,11 +16,13 @@ import java.util.stream.Collectors;
 Оценить асимпотику работы
  */
 public class Task1 implements Task {
-
-  // !!! Редактируйте этот метод !!!
+  // O(n)
   private List<Person> findOrderedPersons(List<Integer> personIds) {
     Set<Person> persons = PersonService.findPersons(personIds);
-    return Collections.emptyList();
+
+    return persons.stream()
+            .sorted(Comparator.comparingInt(Person::getId))
+            .collect(Collectors.toList());
   }
 
   @Override
@@ -33,5 +34,4 @@ public class Task1 implements Task {
         .collect(Collectors.toList())
         .equals(ids);
   }
-
 }
