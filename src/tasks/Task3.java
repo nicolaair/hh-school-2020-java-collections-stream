@@ -4,19 +4,24 @@ import common.Person;
 import common.Task;
 
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /*
 Задача 3
 Отсортировать коллекцию сначала по фамилии, по имени (при равной фамилии), и по дате создания (при равных фамилии и имени)
  */
 public class Task3 implements Task {
-
-  // !!! Редактируйте этот метод !!!
+  // O(n)
   private List<Person> sort(Collection<Person> persons) {
-    return new ArrayList<>(persons);
+    return persons.stream()
+            .sorted(Comparator
+                    .comparing(Person::getFirstName)
+                    .thenComparing(Person::getSecondName)
+                    .thenComparing(person -> person.getCreatedAt().getEpochSecond()))
+            .collect(Collectors.toList());
   }
 
   @Override
@@ -34,6 +39,7 @@ public class Task3 implements Task {
         new Person(3, "Oleg", "Petrov", time.plusSeconds(1)),
         new Person(2, "Vasya", "Petrov", time)
     );
+
     return sortedPersons.equals(sort(persons));
   }
 }
