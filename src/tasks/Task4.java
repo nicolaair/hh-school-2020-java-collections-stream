@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 FYI - DTO = Data Transfer Object - распространенный паттерн, можно погуглить
  */
 public class Task4 implements Task {
-  // O(n)
+  // !!! Редактируйте этот метод !!!
   private List<ApiPersonDto> convert(List<Person> persons) {
     return persons.stream()
             .map(Task4::convert)

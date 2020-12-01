@@ -16,10 +16,11 @@ import java.util.stream.Collectors;
 Оценить асимпотику работы
  */
 public class Task1 implements Task {
-  // O(n)
+  // !!! Редактируйте этот метод !!!
   private List<Person> findOrderedPersons(List<Integer> personIds) {
     Set<Person> persons = PersonService.findPersons(personIds);
 
+    // O(n)
     return persons.stream()
             .sorted(Comparator.comparingInt(Person::getId))
             .collect(Collectors.toList());

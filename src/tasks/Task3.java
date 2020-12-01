@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 Отсортировать коллекцию сначала по фамилии, по имени (при равной фамилии), и по дате создания (при равных фамилии и имени)
  */
 public class Task3 implements Task {
-  // O(n)
+  // !!! Редактируйте этот метод !!!
   private List<Person> sort(Collection<Person> persons) {
     return persons.stream()
             .sorted(Comparator
