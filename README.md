@@ -1,6 +1,6 @@
 # hh-school-2020-java-collections-stream
 
-Домашнее задание по Java, Collections, Stream API
+Домашнее задание по Java, Collections, Stream API (решение находится в ветке stage)
 
 Задачи находятся в классах Tasks1,2,3 и т.д., что именно сделать написано в комментарии к классу
 
